@@ -1,0 +1,20 @@
+.block {
+  height: 100px;
+  width: 100px;
+}
+
+#red {
+  background-color: #500;
+}
+
+#green {
+  background-color: #050;
+}
+
+#blue {
+  background-color: #005;
+}
+
+#yellow {
+  background-color: #550;
+}
