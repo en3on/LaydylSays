@@ -1,33 +1,44 @@
 // jshint esversion:6
+let clicks = -1;
+
 const redBlock = document.querySelector('#red');
 const greenBlock = document.querySelector('#green');
 const blueBlock = document.querySelector('#blue');
 const yellowBlock = document.querySelector('#yellow');
 
-function redActivate() {
-  redBlock.style.backgroundColor = 'red';
-  setTimeout(() => {
-    redBlock.style.backgroundColor = '#500';
-  }, 1000);
+const blocks = {
+  red: ['#f00', '#500'],
+  green: ['#0f0', '#050'],
+  blue: ['#00f', '#005'],
+  yellow: ['#ff0', '#550'],
+};
+
+function activate(color, timeout) {
+  let block;
+  let color1 = blocks[color][0];
+  let color2 = blocks[color][1];
+
+  switch (color) {
+    case 'red':
+      block = redBlock;
+      break;
+    case "green":
+      block = greenBlock;
+      break;
+    case "blue":
+      block = blueBlock;
+      break;
+    case "yellow":
+      block = yellowBlock;
+      break;
+  };
+
+  lightUp(block, color1, color2, timeout);
 }
 
-function greenActivate() {
-  greenBlock.style.backgroundColor = 'green';
+function lightUp(block, color1, color2, timeout) {
+  block.style.backgroundColor = color1;
   setTimeout(() => {
-    greenBlock.style.backgroundColor = '#050';
-  }, 1000);
-}
-
-function blueActivate() {
-  blueBlock.style.backgroundColor = 'blue';
-  setTimeout(() => {
-    blueBlock.style.backgroundColor = '#005';
-  }, 1000);
-}
-
-function yellowActivate() {
-  yellowBlock.style.backgroundColor = 'yellow';
-  setTimeout(() => {
-    yellowBlock.style.backgroundColor = '#550';
-  }, 1000);
+    block.style.backgroundColor = color2;
+  }, timeout);
 }
