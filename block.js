@@ -1,6 +1,10 @@
 // jshint esversion:6
 let clicks = -1;
 
+const status = document.querySelector('#status');
+const round = document.querySelector('#round');
+const replayButton = document.querySelector('.btn');
+
 const redBlock = document.querySelector('#red');
 const greenBlock = document.querySelector('#green');
 const blueBlock = document.querySelector('#blue');
@@ -42,3 +46,11 @@ function lightUp(block, color1, color2, timeout) {
     block.style.backgroundColor = color2;
   }, timeout);
 }
+
+replayButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  computer.roundNumber = 1;
+  computer.pattern = [];
+  computer.playRound();
+  replayButton.style.display = "none";
+});

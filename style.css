@@ -1,6 +1,28 @@
+#round {
+  color: teal;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  display: none;
+}
+
+.simon-container {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 100px;
+  height: 50;
+  align-items: flex-start;
+}
+
 .block {
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
 }
 
 #red {
