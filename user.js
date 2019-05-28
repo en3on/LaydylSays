@@ -8,7 +8,7 @@ yellowBlock.addEventListener("click", () => { validateBlock('yellow'); });
 
 function validateBlock(color) {
   if (clicks !== -1) {
-    activate(color, 500);
+    activate(color, 200);
 
     if (pattern[clicks++] == color) {
       if (clicks === pattern.length) {

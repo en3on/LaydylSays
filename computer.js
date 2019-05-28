@@ -18,7 +18,7 @@ class Computer {
     let items = this.pattern.length;
 
     const interval = setInterval(() => {
-      activate(this.pattern[idx++], 700);
+      activate(this.pattern[idx++], 600 / Math.log(this.roundNumber));
       if (idx === items) {
         clearInterval(interval);
         setTimeout(() => { 
@@ -26,7 +26,7 @@ class Computer {
           status.innerHTML = "Your turn!";
         }, 1200);
       }
-    }, 1500);
+    }, 1000 / Math.log(this.roundNumber));
     pattern = this.pattern;
   }
 
@@ -49,5 +49,3 @@ class Computer {
 }
 
 const computer = new Computer();
-
-computer.playRound();

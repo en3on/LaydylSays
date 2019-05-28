@@ -35,7 +35,7 @@ function activate(color, timeout) {
     case "yellow":
       block = yellowBlock;
       break;
-  };
+  }
 
   lightUp(block, color1, color2, timeout);
 }
